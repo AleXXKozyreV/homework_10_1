@@ -1,5 +1,5 @@
 def get_mask_card_number(card_number: str) -> str:
-    """Функция принимает на вход номер карты в виде строки и возвращает её маску"""
+    """Функция принимает номер карты в виде строки и возвращает её маску"""
 
     blocks_card_numbers = [card_number[:4], card_number[4:6] + "**", "****", card_number[-4:]]
     mask_card_number = " ".join(blocks_card_numbers)
@@ -7,7 +7,7 @@ def get_mask_card_number(card_number: str) -> str:
 
 
 def get_mask_account(account_number: str) -> str:
-    """Функция принимает на вход номер счета в виде строки и возвращает его маску"""
+    """Функция принимает номер счета в виде строки и возвращает его маску"""
 
     mask_account = "**" + account_number[-4:]
     return mask_account
