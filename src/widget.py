@@ -20,4 +20,5 @@ def get_date(old_data: str) -> str:
 
     data_slice = old_data[0:10].split("-")
     result = ".".join(data_slice[::-1])
+
     return result
