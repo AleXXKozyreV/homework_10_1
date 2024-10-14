@@ -14,7 +14,7 @@ def sort_by_date(list_of_dictionaries: list, sort_order: bool = True) -> list:
     порядок сортировки, затем возвращает новый список, отсортированный по дате."""
 
     if sort_order:
-        sorted_list = sorted(list_of_dictionaries, key=lambda x: x["date"])
-    else:
         sorted_list = sorted(list_of_dictionaries, key=lambda x: x["date"], reverse=True)
+    else:
+        sorted_list = sorted(list_of_dictionaries, key=lambda x: x["date"])
     return sorted_list
