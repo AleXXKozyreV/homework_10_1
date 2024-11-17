@@ -1,7 +1,11 @@
+import os
+
 from src.decorators import log
+from src.external_api import currency_conversion
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
+from src.utils import transaction_amount
 from src.widget import get_date, mask_account_card
 
 print(get_mask_card_number("7000792289606361"))
@@ -115,3 +119,12 @@ def my_function_error(x, y):
 
 
 my_function_error(3, 0)
+
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, "data", "operations.json")
+transactions1 = transaction_amount(file_path)
+
+for transaction in transactions1:
+    rub_amount = currency_conversion(transaction)
+    print(f"Transaction amount in RUB: {rub_amount}")
